@@ -1,0 +1,10 @@
+js-memory-test
+
+Warning! May cause freezes and/or system crash. 
+Intended for testing purposes.
+
+This code demonstrates how fast your browser processes 
+calculations in Javascript, and how much memory is taken by storing
+large arrays of numeric objects.
+
+

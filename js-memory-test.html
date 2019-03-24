@@ -1,0 +1,77 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<script type="text/javascript">
+function consumeMemory(millionsOfNumbers, multiplier){
+ x = [];
+ for(i = 1; i < millionsOfNumbers * 1000 * 1000; ++i) {
+  x[i] = Math.pow(2, 52) - (i * multiplier);
+ }
+ alert("Check memory consumption in your task manager now, and then click Ok.");
+ alert("Calculation result: " + x[137913]);
+ x = [];
+}
+ 
+function consumeCPU(){
+ for (i = 0; i < 1000 * 1000 * 1000; ++i){
+  z = i * 1.5;
+  if(z > i) {
+   z = z - i;
+  }
+ }
+ alert("Calculation result: " + z);
+}
+
+function checkBits(){
+  firstnum = 0;
+  secondnum = 0;
+  msg = "";
+  
+ for(i = 0; i < 100; i += 1) {
+  firstnum = Math.pow(2, i);
+  secondnum = firstnum + 1;
+  if(firstnum == secondnum) {
+   msg = "Cannot add 1 to 2^" + i + "\n";
+   msg = msg + "Max number of fully functioning bits is " + (i - 1);
+   alert(msg);
+   break;
+  }
+ }
+ 
+ alert(Math.pow(2,52) - 7);
+ 
+}
+ 
+ 
+
+
+</script>
+
+
+</head>
+<body>
+<input type="button" value="4 million FP numbers" onclick="consumeMemory(4, 1.412);"/>
+<br>
+<input type="button" value="40 million FP numbers" onclick="consumeMemory(40, 1.412);"/>
+<br>
+<input type="button" value="200 million FP numbers" onclick="consumeMemory(200, 1.412);"/>
+<br>
+
+<input type="button" value="4 million Ints" onclick="consumeMemory(4, 2);"/>
+<br>
+<input type="button" value="40 million Ints" onclick="consumeMemory(40, 2);"/>
+<br>
+<input type="button" value="200 million Ints" onclick="consumeMemory(200, 2);"/>
+<br>
+
+
+
+<input type="button" value="Find this process" onclick="consumeCPU();"/>
+<br>
+
+<input type="button" value="Check number of bits in the number" onclick="checkBits();"/>
+<br>
+</body>
+</html>
